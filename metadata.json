@@ -1,0 +1,6 @@
+{
+  "name": "WayFit",
+  "description": "Every step. Every route. Modern mobile fitness & GPS route tracking app with live telemetry, auto-tracking, and progress stats.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with fitness goals and physical metrics",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "weightKg": { "type": "number" },
+        "heightCm": { "type": "number" },
+        "dailyStepGoal": { "type": "number" },
+        "weeklyDistanceGoalKm": { "type": "number" },
+        "unit": { "type": "string", "enum": ["metric", "imperial"] }
+      },
+      "required": ["uid", "email"]
+    },
+    "Activity": {
+      "title": "Activity",
+      "description": "Recorded fitness workout route and stats",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 100 },
+        "type": { "type": "string", "enum": ["walk", "run", "ride", "hike", "travel"] },
+        "startTime": { "type": "number" },
+        "endTime": { "type": "number" },
+        "distanceMeters": { "type": "number" },
+        "movingTimeSeconds": { "type": "number" },
+        "totalTimeSeconds": { "type": "number" },
+        "elevationGainMeters": { "type": "number" },
+        "calories": { "type": "number" },
+        "steps": { "type": "number" },
+        "avgSpeedKmh": { "type": "number" },
+        "maxSpeedKmh": { "type": "number" },
+        "avgPaceSecondsPerKm": { "type": "number" },
+        "bestPaceSecondsPerKm": { "type": "number" },
+        "notes": { "type": "string", "maxLength": 2000 }
+      },
+      "required": ["id", "userId", "title", "type", "startTime", "endTime", "distanceMeters"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user fitness profile information"
+    },
+    "/users/{userId}/activities/{activityId}": {
+      "schema": "Activity",
+      "description": "Stores individual recorded workout activities and GPS routes"
+    }
+  }
+}
