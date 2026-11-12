@@ -29,10 +29,10 @@ export function generateGPX(activity: Activity): string {
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="WayFit - Every step. Every route." xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx version="1.1" creator="MyWayTrack - Every step. Every route." xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
     <name>${escapeXML(activity.title)}</name>
-    <desc>Recorded with WayFit. Activity: ${activity.type}, Distance: ${(activity.distanceMeters / 1000).toFixed(2)} km, Moving Time: ${activity.movingTimeSeconds}s, Calories: ${activity.calories} kcal</desc>
+    <desc>Recorded with MyWayTrack. Activity: ${activity.type}, Distance: ${(activity.distanceMeters / 1000).toFixed(2)} km, Moving Time: ${activity.movingTimeSeconds}s, Calories: ${activity.calories} kcal</desc>
     <time>${startTimeIso}</time>
   </metadata>
   <trk>

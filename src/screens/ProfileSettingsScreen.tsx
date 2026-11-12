@@ -66,7 +66,7 @@ export const ProfileSettingsScreen: React.FC<ProfileSettingsScreenProps> = ({
   const handleSave = () => {
     const updated: UserProfile = {
       ...profile,
-      name: name.trim() || 'WayFit Athlete',
+      name: name.trim() || 'MyWayTrack Athlete',
       weightKg: Number(weightKg) || 70,
       heightCm: Number(heightCm) || 175,
       dailyStepGoal: Number(dailyStepGoal) || 10000,
@@ -99,7 +99,7 @@ export const ProfileSettingsScreen: React.FC<ProfileSettingsScreenProps> = ({
 
   const handleExportCSV = () => {
     const csv = exportActivitiesToCSV(activities);
-    downloadFile(csv, `WayFit_Activities_Export_${new Date().toISOString().slice(0, 10)}.csv`, 'text/csv');
+    downloadFile(csv, `MyWayTrack_Activities_Export_${new Date().toISOString().slice(0, 10)}.csv`, 'text/csv');
   };
 
   return (
@@ -113,7 +113,7 @@ export const ProfileSettingsScreen: React.FC<ProfileSettingsScreenProps> = ({
             ) : profile.name ? (
               profile.name.charAt(0).toUpperCase()
             ) : (
-              'W'
+              'M'
             )}
           </div>
           <div>

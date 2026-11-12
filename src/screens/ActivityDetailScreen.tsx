@@ -44,7 +44,7 @@ export const ActivityDetailScreen: React.FC<ActivityDetailScreenProps> = ({
 
   const handleExportGPX = () => {
     const xml = generateGPX(activity);
-    const filename = `WayFit-${activity.title.replace(/\s+/g, '_')}.gpx`;
+    const filename = `MyWayTrack-${activity.title.replace(/\s+/g, '_')}.gpx`;
     downloadFile(xml, filename, 'application/gpx+xml');
   };
 

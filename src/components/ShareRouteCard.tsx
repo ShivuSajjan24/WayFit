@@ -50,7 +50,7 @@ export const ShareRouteCard: React.FC<ShareRouteCardProps> = ({
     // 2. Header Brand
     ctx.fillStyle = '#FC4C02';
     ctx.font = 'bold 44px -apple-system, sans-serif';
-    ctx.fillText('WayFit', 80, 110);
+    ctx.fillText('MyWayTrack', 80, 110);
 
     ctx.fillStyle = '#94A3B8';
     ctx.font = '24px -apple-system, sans-serif';
@@ -201,13 +201,13 @@ export const ShareRouteCard: React.FC<ShareRouteCardProps> = ({
     // 5. Footer Watermark
     ctx.fillStyle = '#64748B';
     ctx.font = '22px -apple-system, sans-serif';
-    ctx.fillText('Tracked with WayFit App • GPS Verified Route', 80, 1260);
+    ctx.fillText('Tracked with MyWayTrack App • GPS Verified Route', 80, 1260);
 
     // Download PNG
     const dataUrl = canvas.toDataURL('image/png');
     const a = document.createElement('a');
     a.href = dataUrl;
-    a.download = `WayFit-${activity.title.replace(/\s+/g, '-')}.png`;
+    a.download = `MyWayTrack-${activity.title.replace(/\s+/g, '-')}.png`;
     a.click();
   };
 
@@ -217,7 +217,7 @@ export const ShareRouteCard: React.FC<ShareRouteCardProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-[#FC4C02] flex items-center justify-center text-white font-bold text-sm shadow-md shadow-orange-500/20">
-              W
+              M
             </div>
             <span className="font-bold text-white text-base">Share Route Card</span>
           </div>
@@ -234,7 +234,7 @@ export const ShareRouteCard: React.FC<ShareRouteCardProps> = ({
         <div className="rounded-2xl bg-[#111418] border border-gray-800 p-4 text-white flex flex-col gap-3 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-xs font-bold text-[#FC4C02] tracking-wider uppercase">WayFit</span>
+              <span className="text-xs font-bold text-[#FC4C02] tracking-wider uppercase">MyWayTrack</span>
               <h3 className="font-bold text-sm mt-0.5">{activity.title}</h3>
               <p className="text-[11px] text-gray-400">{formatDate(activity.startTime)}</p>
             </div>

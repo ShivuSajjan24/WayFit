@@ -36,7 +36,7 @@ export const UnitTestModal: React.FC<UnitTestModalProps> = ({ onClose }) => {
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-white">WayFit Core Unit Tests</h2>
+              <h2 className="text-base font-bold text-white">MyWayTrack Core Unit Tests</h2>
               <p className="text-xs text-gray-400">Verifying distance, pace, calories, activity detection & GPX</p>
             </div>
           </div>

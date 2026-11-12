@@ -35,7 +35,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
     } else {
       const updated: UserProfile = {
         ...initialProfile,
-        name: name.trim() || 'WayFit Runner',
+        name: name.trim() || 'MyWayTrack Runner',
         weightKg: Number(weightKg) || 70,
         heightCm: Number(heightCm) || 175,
         dailyStepGoal: Number(dailyStepGoal) || 10000,
@@ -64,9 +64,9 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-[#FC4C02] flex items-center justify-center text-white font-black text-xs shadow-md shadow-orange-500/20">
-              W
+              M
             </div>
-            <span className="text-xs font-bold text-gray-300">WayFit Setup</span>
+            <span className="text-xs font-bold text-gray-300">MyWayTrack Setup</span>
           </div>
 
           <div className="flex gap-1.5">
@@ -125,7 +125,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
           <div className="flex flex-col my-auto py-2">
             <h2 className="text-xl font-extrabold text-white mb-1">Permissions & Privacy</h2>
             <p className="text-gray-400 text-xs mb-4">
-              WayFit strictly respects your data. Location is never recorded secretly or without your active control.
+              MyWayTrack strictly respects your data. Location is never recorded secretly or without your active control.
             </p>
 
             <div className="flex flex-col gap-3">

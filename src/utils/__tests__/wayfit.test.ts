@@ -177,7 +177,7 @@ export function runWayFitUnitTests(): { name: string; passed: boolean; message?:
       ],
     };
     const gpx = generateGPX(mockActivity);
-    assert('GPX Generation: Valid XML with trkpt & metadata', gpx.includes('<trkpt') && gpx.includes('WayFit'));
+    assert('GPX Generation: Valid XML with trkpt & metadata', gpx.includes('<trkpt') && gpx.includes('MyWayTrack'));
   } catch (e: any) {
     assert('GPX Generation Exception', false, e.message);
   }

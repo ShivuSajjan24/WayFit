@@ -100,9 +100,9 @@ function AppContent() {
         <div className="flex items-center gap-2.5">
           {/* Logo Pin */}
           <div className="w-6 h-6 rounded-lg bg-[#FC4C02] flex items-center justify-center text-white font-black text-xs shadow-sm shadow-orange-500/20">
-            W
+            M
           </div>
-          <span className="font-extrabold tracking-tight text-white">WayFit</span>
+          <span className="font-extrabold tracking-tight text-white">MyWayTrack</span>
           <span className="text-gray-400 hidden sm:inline">• Cloud SQL & Firebase Connected</span>
         </div>
 

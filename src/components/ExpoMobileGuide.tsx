@@ -16,8 +16,8 @@ export const ExpoMobileGuide: React.FC<ExpoMobileGuideProps> = ({ onClose }) => 
 
   const appJsonCode = `{
   "expo": {
-    "name": "WayFit",
-    "slug": "wayfit",
+    "name": "MyWayTrack",
+    "slug": "mywaytrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,16 +29,16 @@ export const ExpoMobileGuide: React.FC<ExpoMobileGuideProps> = ({ onClose }) => 
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.wayfit.app",
+      "bundleIdentifier": "com.mywaytrack.app",
       "infoPlist": {
         "UIBackgroundModes": ["location", "fetch"],
-        "NSLocationWhenInUseUsageDescription": "WayFit needs your location to map your live routes, calculate speed, and record moving pace.",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "WayFit requires continuous background location to record your workout when your phone is locked or in your pocket.",
-        "NSMotionUsageDescription": "WayFit accesses motion sensors to count your steps, calculate cadence, and automatically detect running vs walking."
+        "NSLocationWhenInUseUsageDescription": "MyWayTrack needs your location to map your live routes, calculate speed, and record moving pace.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "MyWayTrack requires continuous background location to record your workout when your phone is locked or in your pocket.",
+        "NSMotionUsageDescription": "MyWayTrack accesses motion sensors to count your steps, calculate cadence, and automatically detect running vs walking."
       }
     },
     "android": {
-      "package": "com.wayfit.app",
+      "package": "com.mywaytrack.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#111418"
@@ -58,7 +58,7 @@ export const ExpoMobileGuide: React.FC<ExpoMobileGuideProps> = ({ onClose }) => 
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow WayFit to track your routes in the background.",
+          "locationAlwaysAndWhenInUsePermission": "Allow MyWayTrack to track your routes in the background.",
           "isAndroidBackgroundLocationEnabled": true,
           "isAndroidForegroundServiceEnabled": true
         }
@@ -73,7 +73,7 @@ npm install -g eas-cli
 # 2. Login to your Expo account
 eas login
 
-# 3. Configure EAS project
+# 3. Configure EAS project for MyWayTrack
 eas build:configure
 
 # 4. Build Android APK directly for local testing
@@ -85,11 +85,11 @@ eas build --platform ios --profile preview`;
   const backgroundTaskCode = `import * as TaskManager from 'expo-task-manager';
 import * as Location from 'expo-location';
 
-export const LOCATION_TASK_NAME = 'WAYFIT_BACKGROUND_LOCATION_TASK';
+export const LOCATION_TASK_NAME = 'MYWAYTRACK_BACKGROUND_LOCATION_TASK';
 
 TaskManager.defineTask(LOCATION_TASK_NAME, ({ data, error }) => {
   if (error) {
-    console.error('WayFit Background Task Error:', error);
+    console.error('MyWayTrack Background Task Error:', error);
     return;
   }
   if (data) {
@@ -105,7 +105,7 @@ export async function startBackgroundTracking() {
     timeInterval: 2000, // ms
     showsBackgroundLocationIndicator: true,
     foregroundService: {
-      notificationTitle: 'WayFit Active Recording',
+      notificationTitle: 'MyWayTrack Active Recording',
       notificationBody: 'Recording your route in the background.',
       notificationColor: '#FC4C02',
     },

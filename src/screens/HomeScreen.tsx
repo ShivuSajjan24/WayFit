@@ -70,7 +70,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-orange-400 uppercase tracking-widest font-mono">WayFit</span>
+              <span className="text-xs font-bold text-orange-400 uppercase tracking-widest font-mono">MyWayTrack</span>
               <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/30">
                 PRO
               </span>
